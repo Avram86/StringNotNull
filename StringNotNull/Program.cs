@@ -8,34 +8,11 @@ namespace StringNotNull
         {
 
             string text1 = Read();
+            string text2 = Read();
+            string text3 = Read();
 
-            if (string.IsNullOrWhiteSpace(text1))
-            {
-                string text2 = Read();
-
-                if (string.IsNullOrWhiteSpace(text2))
-                {
-                    string text3=Read();
-
-                    if (string.IsNullOrWhiteSpace(text3))
-                    {
-                        Console.WriteLine("Nu am continut!");
-                    }
-                    else
-                    {
-                        Console.WriteLine(text3);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(text2);
-                }
-            }
-            else
-            {
-                Console.WriteLine(text1);
-            }
-
+            string result = string.IsNullOrWhiteSpace(text1) ? text1 : string.IsNullOrWhiteSpace(text2) ? text2 : string.IsNullOrWhiteSpace(text3) ? text3 : "Nu am continut";
+            Console.WriteLine($"The written text is: {result}");
 
             //ReadANonNullString();
         }
